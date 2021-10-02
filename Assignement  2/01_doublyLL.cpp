@@ -91,18 +91,7 @@ void insertAfterNode(Node *node,int data){
     node->next->previous = temp;
     node->next = temp;
 }
-void Afternthnode(int data,int npos,Node *temp)
-{
-    while(temp->next!=NULL && npos>1)
-    {
-        temp=temp->next;
-        npos--;
-    }
-    Node *newnode=new Node(data);
-    
-    newnode->next=temp->next;
-    temp->next=newnode;
-}
+
 
 int main()
 {
