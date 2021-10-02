@@ -42,7 +42,7 @@ void deleteHead(Node *&head)
         Node *node = head;
         head = node->next;
         head->previous = NULL;
-        free(node);
+        delete(node);
     }else{
         cout<<"Noo Node to delete !!";
     }
@@ -51,7 +51,7 @@ void deleteHead(Node *&head)
 void deleteLast(Node *last)
 {
     last->previous->next = NULL;
-    free(last);
+    delete(last);
 }
 
 void deleteAfterMid(Node *head)
@@ -68,13 +68,13 @@ void deleteAfterMid(Node *head)
     Node *node = slow->next;
     node->next->previous  = slow;
     slow->next = node->next;
-    free(node);
+    delete(node);
 }
 
 void deletionAfterNode(Node *node){
     node->previous->next = node->next;
     node->next->previous = node->previous;
-    free(node);
+    delete(node);
 }
 
 Node *lastNode(Node *head)
