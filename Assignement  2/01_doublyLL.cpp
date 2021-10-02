@@ -91,6 +91,19 @@ void insertAfterNode(Node *node,int data){
     node->next->previous = temp;
     node->next = temp;
 }
+void Afternthnode(int data,int npos,Node *temp)
+{
+    while(temp->next!=NULL && npos>1)
+    {
+        temp=temp->next;
+        npos--;
+    }
+    Node *newnode=new Node(data);
+    
+    newnode->next=temp->next;
+    temp->next=newnode;
+}
+
 int main()
 {
 
@@ -116,7 +129,8 @@ int main()
     // insertAtBegining(head, 50);
     // insertAtEnd(lastNode(head), 33);
     // insertionAtMid(head,99);
-    insertAfterNode(first,33);
+   // insertAfterNode(first,33);
+    Afternthnode(21,2,head);
     traverseLinkedList(head);
     
     
